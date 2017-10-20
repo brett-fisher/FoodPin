@@ -20,6 +20,15 @@ class RestaurantTableViewController: UITableViewController {
                                 "traif", "grahamavenuemeats", "wafflewolf", "fiveleaves", "cafelore", "confessional",
                                 "barrafina", "donostia", "royaloak", "caskpubkitchen"]
   
+  var restaurantLocations = ["Hong Kong", "Nashville", "Houston", "Pittsburgh", "Ontario", "Mexico City", "Palo Alto",
+                             "London", "Paris", "Rome", "Miami", "Manchester", "Munich", "St Petersburgh", "Denver",
+                             "New York", "Las Vegas", "Columbus", "Hong Kong", "New York", "New York"]
+  
+  var restaurantType = ["Coffee & Tea", "Chinese", "Coffee House", "Small Dish", "Seafood", "Thai Food", "American",
+                        "Bakery and Coffee House", "Chocolate Shop", "Sandwich Shop", "New York Style Pizza", "Tea House",
+                        "American Food and Ale House", "Bar", "American Food", "American Food", "Italian", "Bar", "American Food",
+                        "Spanish Style", "Bar"]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -42,6 +51,8 @@ class RestaurantTableViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
     
     cell.nameLabel?.text = restaurantNames[indexPath.row]
+    cell.typeLabel?.text = restaurantType[indexPath.row]
+    cell.locationLabel?.text = restaurantLocations[indexPath.row]
     cell.thumbnailImageView?.image = UIImage(named: restaurantImageNames[indexPath.row])
     
     return cell
