@@ -57,4 +57,35 @@ class RestaurantTableViewController: UITableViewController {
     
     return cell
   }
+  
+  // MARK - Table View Delegate Methods
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    //Keeps the cell from being all gray once selected
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    // Menu
+    let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+    
+    //Menu Options
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+    optionMenu.addAction(cancel)
+    present(optionMenu, animated: true, completion: nil)
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
